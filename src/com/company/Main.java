@@ -26,17 +26,7 @@ public class Main {
         System.out.println("Данные ФИО сотрудника для административного отдела: " + fullNameForReport2);
 
         //Задание 4
-
-
-
-        int n = 0;
-
-        String fullNameWithoutYoWithSplitMethod = "";
-        String[] words = fullName.split("");
         StringBuilder sb = new StringBuilder(fullName);
-
-
-
 
         for (int i = 0; i < sb.length(); i++) {
             char findYo = sb.charAt(i);
@@ -45,7 +35,6 @@ public class Main {
               sb.setCharAt(i, findYo);
             }
         }
-
         String fullNameWithoutYo = fullName.replace("ё", "е");
         System.out.println("Данные ФИО сотрудника - " + fullNameWithoutYo); //при помощи метода replace
         System.out.println("Данные ФИО сотрудника - " + sb); //при помощи метода split и contains
