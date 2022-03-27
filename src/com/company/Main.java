@@ -30,20 +30,24 @@ public class Main {
 
 
         int n = 0;
+
         String fullNameWithoutYoWithSplitMethod = "";
         String[] words = fullName.split("");
+        StringBuilder sb = new StringBuilder(fullName);
 
 
-        for (int i = 0; i < fullName.length(); i++) {
-            if (words[i].contains("ё")) {
-              words[i] = "е";
 
+
+        for (int i = 0; i < sb.length(); i++) {
+            char findYo = sb.charAt(i);
+            if (findYo == 'ё') {
+              findYo = 'е';
+              sb.setCharAt(i, findYo);
             }
-            fullNameWithoutYoWithSplitMethod = fullNameWithoutYoWithSplitMethod + words[i];
         }
 
         String fullNameWithoutYo = fullName.replace("ё", "е");
         System.out.println("Данные ФИО сотрудника - " + fullNameWithoutYo); //при помощи метода replace
-        System.out.println("Данные ФИО сотрудника - " + fullNameWithoutYoWithSplitMethod); //при помощи метода split и contains
+        System.out.println("Данные ФИО сотрудника - " + sb); //при помощи метода split и contains
     }
 }
